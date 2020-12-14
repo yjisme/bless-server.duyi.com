@@ -31,7 +31,7 @@ function handleNoError(ctx) {
 function handleError(ctx, err) {
   let code = err.code;
   let msg = err.message;
-  if (!code) {
+  if (!code || typeof code !== "number") {
     code = 500;
     msg = "server internal error";
   }
