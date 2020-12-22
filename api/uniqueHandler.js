@@ -24,7 +24,7 @@ function handleNoError(ctx) {
   ctx.body = {
     code: 0,
     msg: "",
-    data: encode(ctx.body),
+    data: ctx.body,
   };
 }
 
@@ -64,6 +64,7 @@ ${log}`;
 
 module.exports = async function (ctx, next) {
   try {
+    ctx.request.body = encode(ctx.request.body);
     await next();
     handleNoError(ctx);
     log(ctx, null);
