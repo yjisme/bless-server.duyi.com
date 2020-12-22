@@ -1,0 +1,14 @@
+{
+  "apps": [
+    {
+      "name": "bless-server.duyi.com",
+      "script": "index.js",
+      "log_date_format": "YYYY-MM-DD HH:mm Z",
+      "ignoreWatch": ["node_modules", "public", "logs"],
+      "watch": false,
+      "env": {
+        "NODE_ENV": "production"
+      }
+    }
+  ]
+}
